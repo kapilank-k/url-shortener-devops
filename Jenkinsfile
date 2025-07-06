@@ -92,4 +92,3 @@ pipeline {
         }
     }
 }
- 76cc34e (add Jenkinsfile to full project)
