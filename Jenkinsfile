@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+ HEAD
 pipeline {
     agent any
 
@@ -43,7 +43,7 @@ pipeline {
         }
     }
 }
-=======
+
 pipeline {
     agent any
 
@@ -92,4 +92,4 @@ pipeline {
         }
     }
 }
->>>>>>> 76cc34e (add Jenkinsfile to full project)
+ 76cc34e (add Jenkinsfile to full project)
