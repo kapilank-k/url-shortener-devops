@@ -1,24 +1,33 @@
 package com.example.shortener;
 
-import com.example.shortener.model.UrlMap;
 import com.example.shortener.service.UrlService;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class UrlServiceTest {
 
     @Test
-    void testShortenAndRetrieveUrl() {
+    public void testShortenUrl() {
         UrlService urlService = new UrlService();
+        String longUrl = "https://example.com";
 
-        String longUrl = "https://kapilan.com/some-long-url";
-        UrlMap result = urlService.shorten(longUrl);
+        String shortCode = urlService.shortenUrl(longUrl);
 
-        assertNotNull(result.getShortCode());
-        assertEquals(longUrl, result.getOriginalUrl());
+        assertNotNull(shortCode);
+        assertFalse(shortCode.isEmpty());
 
-        String retrieved = urlService.getOriginalUrl(result.getShortCode());
-        assertEquals(longUrl, retrieved);
+        System.out.println("✅ Shortened Code: " + shortCode);
+    }
+
+    @Test
+    public void testRetrieveOriginalUrl() {
+        UrlService urlService = new UrlService();
+        String longUrl = "https://example.com";
+
+        String shortCode = urlService.shortenUrl(longUrl);
+        String retrievedUrl = urlService.getOriginalUrl(shortCode);
+
+        assertEquals(longUrl, retrievedUrl);
+        System.out.println("✅ Retrieved Original URL: " + retrievedUrl);
     }
 }

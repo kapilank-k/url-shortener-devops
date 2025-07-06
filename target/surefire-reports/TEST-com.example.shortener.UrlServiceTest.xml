@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="0" failures="0" name="com.example.shortener.UrlServiceTest" time="0" errors="0" skipped="0">
+<testsuite tests="2" failures="0" name="com.example.shortener.UrlServiceTest" time="0.025" errors="0" skipped="0">
   <properties>
     <property name="jansi.mode" value="force"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
@@ -59,4 +59,6 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.stdout.encoding" value="UTF-8"/>
   </properties>
+  <testcase classname="com.example.shortener.UrlServiceTest" name="com.example.shortener.UrlServiceTest.testShortenUrl" time="0.017"/>
+  <testcase classname="com.example.shortener.UrlServiceTest" name="com.example.shortener.UrlServiceTest.testRetrieveOriginalUrl" time="0.008"/>
 </testsuite>

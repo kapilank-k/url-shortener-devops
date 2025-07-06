@@ -1,14 +1,11 @@
-# Use Eclipse Temurin JDK 17 (OpenJDK)
-FROM eclipse-temurin:17-jdk-alpine
+# Use a small official Java image to run the app
+FROM openjdk:17-jdk-slim
 
-# Set work directory
-WORKDIR /app
-
-# Copy the built jar from target/
+# Copy the .jar file from your target folder to the Docker image
 COPY target/url-shortener-1.0.0.jar app.jar
 
-# Expose port
+# Make port 8080 available outside the container
 EXPOSE 8080
 
-# Run the application
+# This tells Docker what to run when the container starts
 ENTRYPOINT ["java", "-jar", "app.jar"]
