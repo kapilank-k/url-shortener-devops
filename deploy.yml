@@ -1,0 +1,19 @@
+---
+- name: Deploy Spring Boot Docker App
+  hosts: localhost
+  become: true
+  tasks:
+    - name: Pull image from DockerHub
+      community.docker.docker_image:
+        name: kapilank/url-shortener-app
+        tag: "1.0.0"
+        source: pull
+
+    - name: Run the Docker container
+      community.docker.docker_container:
+        name: url-shortener
+        image: kapilank/url-shortener-app:1.0.0
+        state: started
+        ports:
+          - "9090:8080"
+        restart_policy: always
